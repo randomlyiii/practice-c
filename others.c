@@ -33,5 +33,21 @@ int main()
     printf("unsignedInt : b = %u, a = %u\n", b, a);
 
     printf("TOG_BIT(7, 1) = %u\n", TOG_BIT(7, 2)); // 7 = 0111, TOG_BIT(7, 2) = 0011 = 3
+
+    // 检测是大端序还是小端序
+    union
+    {
+        int a;
+        char b;
+    } c;
+    c.a = 1;
+    if (c.b == 1)
+    {
+        printf("Little endian\n");
+    }
+    else
+    {
+        printf("Big endian\n");
+    }
     return 0;
 }
